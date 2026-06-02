@@ -1,0 +1,18 @@
+name: "oss-doc-sync"
+description: "Check whether bilingual Markdown docs stayed structurally in sync."
+inputs:
+  source:
+    description: "Source Markdown file path."
+    required: true
+  target:
+    description: "Target Markdown file path."
+    required: true
+  fail-on:
+    description: "Fail on errors, warnings, or none."
+    required: false
+    default: "errors"
+runs:
+  using: "composite"
+  steps:
+    - run: node "$GITHUB_ACTION_PATH/bin/oss-doc-sync.js" "${{ inputs.source }}" "${{ inputs.target }}" --fail-on "${{ inputs.fail-on }}"
+      shell: bash
