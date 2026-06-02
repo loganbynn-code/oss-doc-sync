@@ -1,0 +1,24 @@
+{
+  "name": "oss-doc-sync",
+  "version": "0.1.0",
+  "description": "Check whether bilingual open source Markdown docs stayed structurally in sync.",
+  "type": "module",
+  "bin": {
+    "oss-doc-sync": "./bin/oss-doc-sync.js"
+  },
+  "scripts": {
+    "test": "node --test",
+    "check": "node ./bin/oss-doc-sync.js README.md README.zh-CN.md"
+  },
+  "keywords": [
+    "markdown",
+    "documentation",
+    "i18n",
+    "open-source",
+    "github-action"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}
